@@ -155,18 +155,6 @@ docker compose -f docker/docker-compose.yml down
 
 ---
 
-## Next Steps
-
-- [ ] HTTPS via Certbot / Let's Encrypt
-- [ ] Alerting rules in Prometheus + AlertManager
-- [ ] Log aggregation with Loki
-- [ ] Commit Grafana dashboards as JSON
-- [ ] CI/CD pipeline via GitHub Actions → EC2
-- [ ] Harden EC2 security groups and NGINX config
-- [ ] Add health checks to all Compose services
-
----
-
 > **Notes**
 > - Prometheus default retention is 15 days. Adjust via `--storage.tsdb.retention.time` in `docker-compose.yml`.
 > - Grafana default login is `admin / admin` — change on first access.
