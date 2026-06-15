@@ -48,6 +48,16 @@ services:
     ports:
       - "3001:3000"
 
+    environment:
+      - GF_SMTP_ENABLED=${GF_SMTP_ENABLED}
+      - GF_SMTP_HOST=${GF_SMTP_HOST}
+      - GF_SMTP_USER=${GF_SMTP_USER}
+      - GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
+      - GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS}
+
+    volumes:
+      - grafana-data:/var/lib/grafana
+
 
 
   node-exporter:
@@ -72,3 +82,6 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker:/var/lib/docker:ro
       - /dev/disk:/dev/disk:ro
+
+volumes:
+  grafana-data:
